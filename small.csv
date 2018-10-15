@@ -1,0 +1,222 @@
+Id,Title,Labels,Iteration,Iteration Start,Iteration End,Type,Estimate,Current State,Created at,Accepted at,Deadline,Requested By,Description,URL,Zendesk ID,Integration,Owned By,Owned By 2,Owned By 3
+136395021,Explore if Google Attachments can send updated information to Tracker,,204,"Mar 6, 2017","Mar 12, 2017",chore,,accepted,"Dec 19, 2016","Mar 9, 2017",,Matthew Heidemann,Like if the file name changes or size etc,https://www.pivotaltracker.com/story/show/136395021,,,,,
+135086499,Handle attachment parameter in comment create and update commands on the server,"command town, github attachments, heidmo accept",204,"Mar 6, 2017","Mar 12, 2017",feature,1,accepted,"Nov 28, 2016","Mar 9, 2017",,Byron Anderson,"### [PR 1088](https://github.com/pivotaltracker/tracker/pull/1088)
+
+CommentCreate & CommentUpdate command can accept a ""attachments"" field. The `Attachments` field and the `file/google_attachments` fields are mutually exclusive and will error if both types are in the parameters.
+
+The parameters for attachments should be backwards compatible. However, we do not need forward compatibility because we will switch to results processing before we start sending new parameters from stories view (#138675351, #137978163).",https://www.pivotaltracker.com/story/show/135086499,,,Matthew Conger-Eldeen,Benjamin Cutler,
+141424575,Project color not retained after reload if changed in project or workspace edit (on www) or just workspace (on ondeck),"customer reported, duplicate",204,"Mar 6, 2017","Mar 12, 2017",bug,,accepted,"Mar 9, 2017","Mar 9, 2017",,Joanne Webb,"1. Got to a project on www
+2. Change its color
+3. reload the page- old color is back
+4. Got to a workspace on on deck
+5. Click manage workspace icon (tooltip says project count not manage Workspace - may be hard for users to find BTW. Hopefully they'll guess which item under Settings allows colors to be changed)
+6. Click a color to change it.
+7. It seems to change in sidebar but does not change in workspace. 
+8. Reload page - old color back in sidebar and remains in workspace panels.",https://www.pivotaltracker.com/story/show/141424575,,,Joanne Webb,,
+139907661,A warning dialog appears if attempting to download an attachment with an unknown filetype.,comment-styling,204,"Mar 6, 2017","Mar 12, 2017",bug,,accepted,"Feb 14, 2017","Mar 10, 2017",,Chad Wagner,"### [PR 1179](https://github.com/pivotaltracker/tracker/pull/1179)
+
+~~[PR 1067](https://github.com/pivotaltracker/tracker/pull/1067)~~
+
+This behavior reproduces using the new comment styling.
+
+1.  Add a comment with an attachment that is an unknown type.  (See attached.)
+2.  Edit the comment.
+3.  Click the attachment. (Click any attachment with an unknown file type - it is not limited to attachments in the comment under edit.)
+
+Expected:  If it works like the existing behavior, it downloads.
+Actual:  A navigation warning appears (see attached.)",https://www.pivotaltracker.com/story/show/139907661,,,Sarah Ehmann,Matthew Conger-Eldeen,
+141609175,Explore deleting comments to discover any unexpected behavior or regressions due to the change to results processing,"charter, command town, github attachments, results processing",205,"Mar 13, 2017","Mar 19, 2017",chore,,accepted,"Mar 13, 2017","Mar 13, 2017",,Matthew Conger-Eldeen,,https://www.pivotaltracker.com/story/show/141609175,,,Matthew Conger-Eldeen,Lisa Crispin,
+139761989,Inconsistent capitalization in new comments for AM/PM,"accept on demo, comment-styling",205,"Mar 13, 2017","Mar 19, 2017",bug,,accepted,"Feb 13, 2017","Mar 13, 2017",,Jeanette Head,"Commits use ""am""/""pm"" and comments use ""AM""/""PM.
+
+http://tracker-styleguide.cfapps.io/css_writing.html says to use lowercase.",https://www.pivotaltracker.com/story/show/139761989,,,Matthew Conger-Eldeen,Benjamin Cutler,
+141530075,Creating a story with a google attachment fails,"customer reported, data loss, production",205,"Mar 13, 2017","Mar 19, 2017",bug,,accepted,"Mar 10, 2017","Mar 14, 2017",,Tom Charles,"### [PR 1234](https://github.com/pivotaltracker/tracker/pull/1234)
+
+See [Splunk Logs](https://pivotal.splunkcloud.com/en-US/app/search/search?q=search%20*%20google_attachmentundefined&display.page.search.mode=smart&dispatch.sample_ratio=1&earliest=-24h%40h&latest=now&display.prefs.events.offset=0&sid=1489188761.1959&display.prefs.events.count=50)
+
+Steps to reproduce:
+1. Create a new story (don't save)
+1. Add a comment with a google attachment or github commit and save it
+1. Save the story
+
+Expected:
+The story is created
+Actual:
+Endless spinner on the story and it is never saved
+It gets a 500 error
+
+### User reports
+
+1. https://pivotaltracker.zendesk.com/agent/tickets/48701
+2. https://pivotaltracker.zendesk.com/agent/tickets/48695
+3. https://pivotaltracker.zendesk.com/agent/tickets/48681",https://www.pivotaltracker.com/story/show/141530075,,,Sarah Ehmann,Jeanette Head,Matthew Conger-Eldeen
+139503399,Stop passing backbone models as props to CommentV2 components,"architecture, comment-styling",205,"Mar 13, 2017","Mar 19, 2017",chore,,accepted,"Feb 9, 2017","Mar 15, 2017",,Benjamin Cutler,### [PR 1246](https://github.com/pivotaltracker/tracker/pull/1246),https://www.pivotaltracker.com/story/show/139503399,,,Benjamin Cutler,Jeanette Head,
+140081257,Update styling for expansion and collapsing of commits,comment-styling,205,"Mar 13, 2017","Mar 19, 2017",feature,1,accepted,"Feb 16, 2017","Mar 15, 2017",,Matthew Heidemann,"### [PR 1188](https://github.com/pivotaltracker/tracker/pull/1188)
+
+Fix the issues with header and logos appearing - 
+
+https://pivotal.invisionapp.com/share/Y4A98KP3F#/screens
+
+This story should resolve issues  found in #139219563",https://www.pivotaltracker.com/story/show/140081257,,,Benjamin Cutler,Jeanette Head,
+141038619,Update file drop prompt,comment-styling,205,"Mar 13, 2017","Mar 19, 2017",feature,1,accepted,"Mar 3, 2017","Mar 15, 2017",,Matthew Heidemann,"### [PR 1249](https://github.com/pivotaltracker/tracker/pull/1249)
+
+Radiate blue icon w/concentric circles ala google material design",https://www.pivotaltracker.com/story/show/141038619,,,Sarah Ehmann,Matthew Conger-Eldeen,
+140871861,Button for emoji picker too dark in new comment styling,comment-styling,205,"Mar 13, 2017","Mar 19, 2017",feature,0,accepted,"Mar 1, 2017","Mar 15, 2017",,Dan Podsedly,### [PR 1233](https://github.com/pivotaltracker/tracker/pull/1233),https://www.pivotaltracker.com/story/show/140871861,,,Tom Osugi,Best Friend,Eric Dattore
+141879609,failing frontend-integration on master after merge of #140081257,,205,"Mar 13, 2017","Mar 19, 2017",chore,,accepted,"Mar 16, 2017","Mar 16, 2017",,Jeanette Head,,https://www.pivotaltracker.com/story/show/141879609,,,Jeanette Head,,
+141893091,fix integration test and un-revert react description editor,,205,"Mar 13, 2017","Mar 19, 2017",chore,,accepted,"Mar 16, 2017","Mar 17, 2017",,Jeanette Head,,https://www.pivotaltracker.com/story/show/141893091,,,Jeanette Head,Matthew Conger-Eldeen,
+140775189,Description editor should use a react component,"convert backbone views to react, heidmo accept",205,"Mar 13, 2017","Mar 19, 2017",feature,1,accepted,"Feb 28, 2017","Mar 17, 2017",,Matthew Heidemann,"### [PR 1182](https://github.com/pivotaltracker/tracker/pull/1182)
+
+**Goals:**
+* Fix #139482005 this data loss issue where the pending description is clobbered 
+* Remove another backbone view
+
+**~~Non~~Goal**
+* Converting the presentation or show view of the description backbone component
+
+**Example**
+1. See story above
+2. Happy path case - User edits the description and presses done to save and submit request to server.",https://www.pivotaltracker.com/story/show/140775189,,,Jeanette Head,,
+139482005,Description edits can be lost while using projector mode in a workspace.,"customer reported, data loss",205,"Mar 13, 2017","Mar 19, 2017",bug,,accepted,"Feb 9, 2017","Mar 17, 2017",,Nathan E Swain,"When using projector mode in a workspace - if you edit and /or add a description, then add a comment (or similar action), then click ""Close"" - the description changes are not autosaved.
+
+To dup:
+
+1. While in a workspace, change your story density mode to Projector Mode.
+2. Double click a story to edit it (it will go to single story mode)
+3. Edit the description but don't click Done
+4. **Add a comment, task or label**
+5. Click Close
+6. **Expected** - description edits are saved
+7. **Actual** - description edits are lost
+
+
+**NOTE** The issue only happens to the left most panel, so if you have multiple project panels open, it only occurs to the one closest to the sidebar. If you only have one panel open, it will also dup. 
+
+Additional notes: 
+
+- I tested this with projector mode in a single project - it worked fine.
+- I tested this with normal density mode in a workspace - it works fine",https://www.pivotaltracker.com/story/show/139482005,,,Lisa Crispin,,
+141739097,Slow project loading due to file attachment loader,,205,"Mar 13, 2017","Mar 19, 2017",bug,,accepted,"Mar 14, 2017","Mar 17, 2017",,Josh Cutler,"### [PR 1255](https://github.com/pivotaltracker/tracker/pull/1255)
+
+Project [Nexia Home](https://www.pivotaltracker.com/n/projects/106730) is very slow to load (initially 30+ seconds, reduced to 15+ after advising to reduce done stories loaded).
+
+[NewRelic information](https://rpm.newrelic.com/accounts/973/applications/26797379/transactions#id=5b22436f6e74726f6c6c65722f73657276696365732f76352f6361636865645f70726f6a656374732f73686f77222c22225d&app_trace_id=ee1a7691-08cf-11e7-a5be-f8bc124256a0_9404_13456) showing a file attachment loading performance issue.
+
+**User report:**
+
+What change caused the initial load to be sooooo slow?
+
+Opening one of our projects takes 20-30 seconds now..",https://www.pivotaltracker.com/story/show/141739097,48750,Zendesk feedback requests,Benjamin Cutler,Matthew Conger-Eldeen,
+141915715,Profile the cached project json service to understand some wins we can make,,205,"Mar 13, 2017","Mar 19, 2017",chore,,accepted,"Mar 16, 2017","Mar 17, 2017",,Matthew Conger-Eldeen,,https://www.pivotaltracker.com/story/show/141915715,,,Matthew Conger-Eldeen,,
+142074417,Update the pull_request script to support epic branches,,206,"Mar 20, 2017","Mar 26, 2017",chore,,accepted,"Mar 20, 2017","Mar 20, 2017",,Matthew Conger-Eldeen,### [PR 1267](https://github.com/pivotaltracker/tracker/pull/1267),https://www.pivotaltracker.com/story/show/142074417,,,Matthew Conger-Eldeen,Jeanette Head,
+141821337,Remove markdown button in new description editor,convert backbone views to react,206,"Mar 20, 2017","Mar 26, 2017",feature,1,accepted,"Mar 15, 2017","Mar 20, 2017",,Matthew Heidemann,Accept on ##2824327,https://www.pivotaltracker.com/story/show/141821337,,,Jeanette Head,Matthew Conger-Eldeen,
+141980477,Clicking a link or trying to select text in the description opens edit view,convert backbone views to react,206,"Mar 20, 2017","Mar 26, 2017",bug,,accepted,"Mar 17, 2017","Mar 20, 2017",,Chad Wagner,"### [PR 1266](https://github.com/pivotaltracker/tracker/pull/1266)
+
+1.  Try to select text in a description by dragging.
+
+Expected:  The text becomes selected.
+Actual:  Edit mode opens.
+
+
+1.  Click a link inside of the description.
+
+Expected:  The link opens in a new tab.
+Actual:  The link opens in a new tab, but tabbing back to the story reveals the description is in edit view",https://www.pivotaltracker.com/story/show/141980477,,,Matthew Conger-Eldeen,Jeanette Head,
+141969329,"When editing the description field, the wrong emoji font family is being used",convert backbone views to react,206,"Mar 20, 2017","Mar 26, 2017",bug,,accepted,"Mar 17, 2017","Mar 20, 2017",,Chad Wagner,"This reproduces on demo.
+1.  Edit the description field.
+2.  See the computed font family.
+Expected:  The EmojiFontFace family is used.
+Actual:  AppleEmoji,SegoeUIEmoji,EmojiOne are used.
+
+Possibly a related issue - if not, I will put a separate bug but Heidmo thought might be related:
+1. Change density to projector mode
+2. Open a story in single story view. If it already has a description, the text is appropriately huge.
+3. Edit the description. 
+Expected: Any text already there, or any text you type, remains huge. This is prod behavior.
+Actual: In edit mode, the text is small, as if it were normal density. Screenshots attached of prod and demo behavior.",https://www.pivotaltracker.com/story/show/141969329,,,Sarah Ehmann,,
+142077425,CMD+S and CMD+Enter do not save changes on reactified description,convert backbone views to react,206,"Mar 20, 2017","Mar 26, 2017",bug,,accepted,"Mar 20, 2017","Mar 21, 2017",,Chad Wagner,"1.  Edit the description of a story.
+2.  Press CMD+S or CMD+Enter.
+
+Expected:  The story is collapsed and the changes are saved.
+Actual:  The description leaves its draft state, however the changes are not saved and the story is not collapsed.",https://www.pivotaltracker.com/story/show/142077425,,,Sarah Ehmann,Jeanette Head,Lisa Crispin
+140423757,Commit messages can cause a horizontal scrollbar to appear,comment-styling,206,"Mar 20, 2017","Mar 26, 2017",bug,,accepted,"Feb 22, 2017","Mar 22, 2017",,Chad Wagner,"### [PR 1278](https://github.com/pivotaltracker/tracker/pull/1278)
+
+You can see this behavior in the following story https://ondeck.pivotaltracker.com/story/show/140338779
+
+1.  Add a commit with a long string that contains no spaces.
+
+Expected:  Needs design.  We previously had a horizontal scrollbar appear much like in a code block.
+Actual:  The text runs off the panel causing a horizontal scrollbar to appear.  See the attached image.",https://www.pivotaltracker.com/story/show/140423757,,,Sarah Ehmann,,
+140856067,explore editing descriptions to discover any regression failures,"charter, convert backbone views to react",206,"Mar 20, 2017","Mar 26, 2017",chore,,accepted,"Mar 1, 2017","Mar 22, 2017",,Lisa Crispin,https://ondeck.pivotaltracker.com/story/show/140775189 is reactifying edit description. This is the charter to explore it for regressions.,https://www.pivotaltracker.com/story/show/140856067,,,Lisa Crispin,Chad Wagner,
+142273301,Stories with a lot of activity causing typing to appear very slowly,comment-styling,206,"Mar 20, 2017","Mar 26, 2017",bug,,accepted,"Mar 22, 2017","Mar 23, 2017",,Chad Wagner,"### [PR 1298](https://github.com/pivotaltracker/tracker/pull/1298)
+
+This requires a story with many comments.  You can import the attached .csv to create a story that exhibits this behavior.
+
+1.  Expand the story with many comments.  
+2.  Begin typing in the comments field.
+
+Expected:  Keystrokes are added immediately.
+Actual:  Adding text is incredibly slow.
+
+Appears to happen only with new comment styling, though with old comment styling, we feel like we can detect a tiny amount of slowness. 
+
+Per Ben, turning on the react dev tool thingie shows too many things re-rendering. 
+
+Branch: `142273301-activity-performance`",https://www.pivotaltracker.com/story/show/142273301,,,Matthew Conger-Eldeen,Sarah Ehmann,
+138675345,Move CommentDelete to result processing,"command town, github attachments, needs heidmo, results processing",206,"Mar 20, 2017","Mar 26, 2017",feature,1,accepted,"Jan 30, 2017","Mar 23, 2017",,Matthew Conger-Eldeen,"### [PR 1173](https://github.com/pivotaltracker/tracker/pull/1173)
+
+Branch: `138675345-comment-delete-results`",https://www.pivotaltracker.com/story/show/138675345,,,Matthew Conger-Eldeen,Benjamin Cutler,
+142256093,Story flyovers on story links don't work in single story view,"production, state previews on story links",229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"Mar 22, 2017","Aug 30, 2017",,Joanne Webb,"Steps one www or on deck:
+
+1. Create a story, add a comment with a link to another story
+2. Open that story in single story view (either via URL or by clicking the arrow button in the expanded story)
+3. Hover over the link
+
+Expected: Flyover with details of the linked story (the same as yours still get when in an expanded story in a panel
+
+Actual: Nada
+
+This broke and was fixed previously: https://ondeck.pivotaltracker.com/story/show/127820687
+
+Here's a story that demo's problem:
+www https://www.pivotaltracker.com/n/projects/808147/stories/140895959
+on deck https://ondeck.pivotaltracker.com/n/projects/808147/stories/140895959",https://www.pivotaltracker.com/story/show/142256093,,,Best Friend,Jeanette Head,
+150646012,Long username looks weird in comments,,229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"Aug 29, 2017","Aug 30, 2017",,Piper Niehaus,"See screenshot
+
+![](https://ondeck.pivotaltracker.com/file_attachments/83738685/download?inline=true&size=big)",https://www.pivotaltracker.com/story/show/150646012,,,Jeanette Head,Best Friend,
+150655749,code section looks ridiculous in projector mode 😂  🤣,github integration,229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"Aug 29, 2017","Aug 30, 2017",,Jeanette Head,,https://www.pivotaltracker.com/story/show/150655749,,,Best Friend,Jeanette Head,
+150650628,Use the viewstore for all relevant attributes in code section,"architecture, tech debt",229,"Aug 28, 2017","Sep 3, 2017",chore,,accepted,"Aug 29, 2017","Aug 30, 2017",,Matthew Conger-Eldeen,"Attributes that should be in the view store (but not limited to): `commit_picker_open`, `pr_picker_open_`, `branch_creator_open_`, `branchName_`, `branch_create_done_`, `branch_creation_error_`.
+",https://www.pivotaltracker.com/story/show/150650628,,,Matthew Conger-Eldeen,Jeanette Head,
+150621227,"Only show ""Pull Request"" section if there is a PR",github pr,229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"Aug 28, 2017","Aug 30, 2017",,Matthew Heidemann,"It's odd that ""Pull Requests"" section hangs out if there are no pull requests",https://www.pivotaltracker.com/story/show/150621227,,,Jeanette Head,,
+150696032,code section looks ridiculous in single story view,github integration,229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"Aug 30, 2017","Aug 30, 2017",,Jeanette Head,"whoever did #150655749 didn't do it right and used the wrong classes and now things look more ridiculous in single story mode.
+
+Yeah, that was me.",https://www.pivotaltracker.com/story/show/150696032,,,Jeanette Head,,
+150715701,Cleanup formatting for capabilities.rb,,229,"Aug 28, 2017","Sep 3, 2017",chore,,accepted,"Aug 31, 2017","Aug 31, 2017",,Matthew Conger-Eldeen,,https://www.pivotaltracker.com/story/show/150715701,,,Lisa Crispin,Matthew Conger-Eldeen,
+150620606,Clicking cancel in add a branch removes existing pull requests,"github integration, github pr",229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"Aug 28, 2017","Aug 31, 2017",,Matthew Heidemann,"1. Look for a story with a pull request
+2. Click add a branch
+3. Cancel branch modal
+
+Expect: To see PR
+Actual: PR is missing.",https://www.pivotaltracker.com/story/show/150620606,,,Matthew Conger-Eldeen,Jeanette Head,
+150620019,Long project names no longer ellipsify for non-public projects,,229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"Aug 28, 2017","Aug 31, 2017",,Chad Wagner,"1.  Find a non-public project.
+2.  Change the project to have a really long name.
+3.  Navigate to any non-stories page.
+
+Expected:  The name has ellipses.
+Actual:  The name has no ellipses.  This was introduced in the fix for https://ondeck.pivotaltracker.com/story/show/146886243",https://www.pivotaltracker.com/story/show/150620019,,,Matthew Conger-Eldeen,Benjamin Cutler,Best Friend
+144743813,Tasks field is wonky in Firefox,,229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"May 2, 2017","Aug 31, 2017",,Nathan E Swain,"...Borders are varying widths and the checkbox is off center. See image below. 
+
+![Please see the attached screenshot](https://www.pivotaltracker.com/file_attachments/79279969/download?inline=true)
+
+### dev-notes
+
+Wasn't able to reproduce checkbox alignment issue w/ FF 54.0.1 (64-bit).",https://www.pivotaltracker.com/story/show/144743813,,,Best Friend,,
+148156227,fetching github branches does not handle errors,"github component debt, github pr",229,"Aug 28, 2017","Sep 3, 2017",chore,,accepted,"Jun 30, 2017","Aug 31, 2017",,Best Friend,"services/github#selectRepository is missing this test/implementation
+
+cf. #133873083",https://www.pivotaltracker.com/story/show/148156227,,,Jeanette Head,,
+142617389,icon in project history for epics is a purple puzzle piece,production,229,"Aug 28, 2017","Sep 3, 2017",bug,,accepted,"Mar 28, 2017","Aug 31, 2017",,Lisa Crispin,Not sure what it should be - a shield?,https://www.pivotaltracker.com/story/show/142617389,,,Best Friend,,
+150727910,result_processor sanity checks,,229,"Aug 28, 2017","Sep 3, 2017",chore,,accepted,"Aug 31, 2017","Aug 31, 2017",,Benjamin Cutler,"While trying to diagnose a bug, noticed two things:
+
+1) `filterUnprocessableResults` should probably only have a whitelist, ie throw on unrecognized result types.
+2) `sortResults` does not check for unrecognized result types if there is only one result, because the check happens in the sort comparison, and the sort comparison never fires if there is only one item in the array.
+
+Fix both of these.",https://www.pivotaltracker.com/story/show/150727910,,,Benjamin Cutler,Jeanette Head,
+150501370,Verify that retrying commands in the PullRequest service actually decreases webhook failures,github integration,229,"Aug 28, 2017","Sep 3, 2017",chore,,accepted,"Aug 23, 2017","Sep 1, 2017",,Matthew Heidemann,We implemented retry logic in the PR service as part of #150498907. Let's see if it actually decreases webhook failures.,https://www.pivotaltracker.com/story/show/150501370,,,Matthew Conger-Eldeen,,
