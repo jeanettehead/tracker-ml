@@ -96,9 +96,9 @@ Additional notes:
 - I tested this with normal density mode in a workspace - it works fine",https://www.pivotaltracker.com/story/show/139482005,,,Lisa Crispin,,
 141739097,Slow project loading due to file attachment loader,,205,"Mar 13, 2017","Mar 19, 2017",bug,,accepted,"Mar 14, 2017","Mar 17, 2017",,Josh Cutler,"### [PR 1255](https://github.com/pivotaltracker/tracker/pull/1255)
 
-Project [Nexia Home](https://www.pivotaltracker.com/n/projects/106730) is very slow to load (initially 30+ seconds, reduced to 15+ after advising to reduce done stories loaded).
+Project  is very slow to load (initially 30+ seconds, reduced to 15+ after advising to reduce done stories loaded).
 
-[NewRelic information](https://rpm.newrelic.com/accounts/973/applications/26797379/transactions#id=5b22436f6e74726f6c6c65722f73657276696365732f76352f6361636865645f70726f6a656374732f73686f77222c22225d&app_trace_id=ee1a7691-08cf-11e7-a5be-f8bc124256a0_9404_13456) showing a file attachment loading performance issue.
+[NewRelic information](https://rpm.newrelic.com/accounts/123/applications/123/transactions) showing a file attachment loading performance issue.
 
 **User report:**
 
